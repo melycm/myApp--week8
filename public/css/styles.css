@@ -1,0 +1,39 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300);
+
+body {
+    background-color: #b092d6;
+    font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+.main {
+    /* margin-left: 12%;
+    border-radius: 10px; */
+    display: flex;
+    justify-content: center;
+}
+
+.cdPic {
+    border-radius: 10px;
+}
+
+.mainButtons {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+button {
+    padding: 5px;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+a {
+    font-size: 15px;
+}
