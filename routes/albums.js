@@ -31,7 +31,7 @@ router.get('/albums', (req, res) => {
 
     res.render('albums',{
         pageTitle: "Albums",
-        pageID: 'Albums',
+        pageId: 'Albums',
         albums: data.albums
     })
 })
@@ -54,7 +54,7 @@ router.get('/albums/:albumID', (req, res) => {
 
     res.render('albumIndi',{
         pageTitle: "Album",
-        pageID: 'Albums',
+        pageId: 'Albums',
         albums: albums
     })
 })

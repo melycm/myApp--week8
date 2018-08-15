@@ -16,14 +16,31 @@
                 <a style="color:white;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Albums
                 </a>
+                <% if(pageId  === "Albums"){ %>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="./0">Taylor Swift</a>
+                            <a class="dropdown-item" href="./1">Fearless</a>
+                            <a class="dropdown-item" href="./2">Speak Now</a>
+                            <a class="dropdown-item" href="./3">Red</a>
+                            <a class="dropdown-item" href="./4">1989</a>
+                            <a class="dropdown-item" href="./5">Reputation</a>
+                        </div>
+                <% } %>
+               
+
+                <% if(pageId  !== "Albums"){ %>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="albums/0">Taylor Swift</a>
-                <a class="dropdown-item" href="albums/1">Fearless</a>
-                <a class="dropdown-item" href="albums/2">Speak Now</a>
-                <a class="dropdown-item" href="albums/3">Red</a>
-                <a class="dropdown-item" href="albums/4">1989</a>
-                <a class="dropdown-item" href="albums/5">Reputation</a>
+                <a class="dropdown-item" href="./albums/0">Taylor Swift</a>
+                <a class="dropdown-item" href="./albums/1">Fearless</a>
+                <a class="dropdown-item" href="./albums/2">Speak Now</a>
+                <a class="dropdown-item" href="./albums/3">Red</a>
+                <a class="dropdown-item" href="./albums/4">1989</a>
+                <a class="dropdown-item" href="./albums/5">Reputation</a>
                 </div>
+                <%  } %>
+            </li>
+            <li class="nav-item active">
+                    <a style="color:white;" class="nav-link" href="/albums">Contact Us<span class="sr-only">(current)</span></a>
             </li>
         </div>
         </nav>
