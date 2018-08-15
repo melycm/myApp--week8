@@ -11,24 +11,21 @@
     <link rel="stylesheet" href="/css/styles.css">
   </head>
   <body>
-      <% include partials/content/header.ejs %>
+    <% include partials/content/header.ejs %>
 
-      <h1><b><%= pageTitle %></b></h1> 
+    <h1><b><%= pageTitle %></b></h1> -->
 
-      <div class="allAlbums">
-
-      <% for(var i= 0; i<albums.length; i++) { %>
-      
-          <h2><%= albums[i].albumname %></h2>
-         <img class="cdPic" src="/images/albums/<%= albums[i].shortname %>_ts.png" width="300"> 
-         <p><%= albums[i].summary %></p>
-         <p><%- albums[i].tracklist %></p>  
+    <% for(var i= 0; i<albums.length; i++) { %>
+        <h2><%= albums[i].albumname %></h2>
+        <img class="cdPic" src="/images/albums/<%= albums[i].shortname %>_ts.png" width="300"> 
+        <p><%= albums[i].summary %></p>
+        <p><%= albums[i].tracklist %></p>  
         
-       <% } %>
-      </div>
-      
+        <% } %>
 
-      <% include partials/content/footer.ejs %>
+    
+
+    <% include partials/content/footer.ejs %>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
