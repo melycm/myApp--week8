@@ -8,6 +8,7 @@ html{
 body {
     /* background-color: #b092d6; */
     font-family: 'Open Sans Condensed', sans-serif;
+    /* height: 100vh; */
 }
 
 .navbar {
@@ -85,4 +86,8 @@ a {
 .soloAlbum {
     margin-bottom: 90px;
     margin-left: 20px;
+}
+
+.borderFeedback {
+    background-color: #9c7dc5;
 }

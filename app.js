@@ -1,16 +1,21 @@
 let express = require('express');
 let app = express();
 let data = require('./data/data.json');
+let feedback = require('./data/feedback.json');
 
 app.set('appData', data);
+app.set('feedbackData', data);
 
 app.set('view engine', 'ejs');
 app.use(express.static('public'));
 
-app.locals.siteTitle = "T.S Albums"
+
+app.locals.siteTitle = "T.S Albums";
 
 app.use(require('./routes/index'));
 app.use(require('./routes/albums'));
+app.use(require('./routes/feedback'));
+app.use(require('./routes/api'));
 
 
 app.listen(3000, ()=>{
