@@ -44,7 +44,7 @@ h1 {
     display: flex;
     justify-content: center;
     margin-top: 15px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
 }
 
 .mainTitle {
@@ -57,6 +57,7 @@ h1 {
     border-radius: 10px;
     display: flex;
     justify-content: center;
+    margin-right: 0%;
 }
 
 .mainButtons {
@@ -79,8 +80,9 @@ a {
 }
 
 .allAlbums {
-    margin-left: 20px;
-    margin-bottom: 70px;
+    margin-left: 30px;
+    margin-bottom: 80px;
+    margin-top: 30px;
 }
 
 .soloAlbum {
@@ -92,3 +94,14 @@ a {
     background-color: #9c7dc5;
 }
 
+@media only screen and (max-width: 600px){
+    .allAlbums {
+        margin-left: 10px;
+        margin-bottom: 70px;
+    }
+
+    .soloAlbum {
+        margin-bottom: 90px;
+        margin-left: 10px;
+    }
+}

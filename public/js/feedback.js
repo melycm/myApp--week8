@@ -17,7 +17,7 @@ $(function() {
     $('.feedback-messages').on('click', function(e){
         if(e.target.className = "glyphicon glypicon-trash"){
             $.ajax({
-                url: 'api/' + e.target.id,
+                url: '/api/' + e.target.id,
                 type: 'DELETE',
                 success: updateFeedback
             })

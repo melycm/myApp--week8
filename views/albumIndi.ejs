@@ -17,10 +17,24 @@
 
     <div class="soloAlbum">
 
-    <h2><%= albums.albumname %></h2>
-    <img class="cdPic" src="/images/albums/<%= albums.shortname %>_ts.png" width="300"> 
-    <p><%= albums.summary %></p>
-    <p><%- albums.tracklist %></p>  
+        <div class="row">
+            <div class="col-md-3">
+              <img class="cdPic" src="/images/albums/<%= albums.shortname %>_ts.png" width="300"> 
+            </div>
+            <div class="col-md-8 ml-4 mt-4"> 
+                      <h2><%= albums.albumname %></h2>
+                      <p><%= albums.summary %></p>
+                      <div class="row">
+                        <div class="col-2">
+                          <a href="<%= albums.albumAM %>" target="_blank"><img src="/images/misc/apple-music.png" width="100px"></a>
+                        </div>
+                        <div class="col-2">
+                            <a href="<%= albums.albumSM %>" target="_blank"><img src="/images/misc/spotify-music.png" width="100px"></a>
+                        </div>
+                      </div>
+            </div>
+          </div>
+          <p><%- albums.tracklist %></p>
     
     </div>
     
