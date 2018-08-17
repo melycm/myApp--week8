@@ -11,18 +11,18 @@ $(function() {
             name: $('#feedback-form-name').val(),
             title: $('#feedback-form-title').val(),
             message: $('#feedback-form-message').val(),
-        })
+        }, updateFeedback)
     })
 
     $('.feedback-messages').on('click', function(e){
         if(e.target.className = "far fa-trash-alt"){
             $.ajax({
-                url: '/api/' + e.target.id,
+                url: 'api/' + e.target.id,
                 type: 'DELETE',
                 success: updateFeedback
-            })
+            });
         }
-    })
+    });
 
 
     function updateFeedback(data) {

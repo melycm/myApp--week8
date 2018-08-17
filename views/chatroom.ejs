@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-  <head>
+<head>
     <title><%= siteTitle %></title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -9,44 +9,46 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/styles.css">
-  </head>
-  <body id="<%= pageId %>">
-      <% include partials/content/header.ejs %>
+</head>
 
-      <!-- <h1><b><%= pageTitle %></b></h1>  -->
+<body id="<%= pageId %>">
+    <% include partials/content/header.ejs %>
 
-      <div class="allAlbums">
-
-      <% for(var i= 0; i<albums.length; i++) { %>
-        <div class="row">
-          <div class="col-md-3">
-            <img class="cdPic" src="/images/albums/<%= albums[i].shortname %>_ts.png" width="300"> 
-          </div>
-          <div class="col-md-8 ml-4 mt-4"> 
-                    <h2><%= albums[i].albumname %></h2>
-                    <p><%= albums[i].summary %></p>
-                    <div class="row">
-                      <div class="col-2">
-                        <a href="<%= albums[i].albumAM %>" target="_blank"><img src="/images/misc/apple-music.png" width="100px"></a>
-                      </div>
-                      <div class="col-2">
-                          <a href="<%= albums[i].albumSM %>" target="_blank"><img src="/images/misc/spotify-music.png" width="100px"></a>
-                      </div>
-                    </div>
-          </div>
-        </div>
-        <p><%- albums[i].tracklist %></p>  
+    <!-- <h1><b><%= pageTitle %></b></h1>  -->
+    <ul id="messages">
         
-      <% } %>
-      </div>
-      
+    </ul>
+    <form action="">
+        <input id="m" autocomplete="off" /><button>Send</button>
+    </form>
 
-      <% include partials/content/footer.ejs %>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
+    <script>
+        $(function () {
+          var socket = io();
+          $('form').submit(function(){
+              //talking to back end
+            socket.emit('chat message', $('#m').val());
+            $('#m').val('');
+            return false;
+          });
+          socket.on('chat message', function(msg){
+              
+            $('#messages').append($('<li>').text(msg));
+            window.scrollTo(0, document.body.scrollHeight);
+          });
+        });
+      </script>
+    
+
+    <% include partials/content/footer.ejs %>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-  </body>
+
+</body>
 </html>

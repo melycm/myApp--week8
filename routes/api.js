@@ -32,9 +32,16 @@ router.post('/api', function(req, res){
 })
 
 router.delete('/api/:id', function(req, res){
+
+    console.log('hello ')
     data.splice(req.params.id, 1);
 
-    fs.writeFile('../data/feedback.json', JSON.stringify(data), 'utf8')
+    fs.writeFile('data/feedback.json', JSON.stringify(data), 'utf8',
+    function(err){
+        if(err){
+            console.log(err);
+        }
+    })
 })
 
 module.exports = router;
