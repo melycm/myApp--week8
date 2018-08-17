@@ -20,7 +20,7 @@ router.get('/api', (req, res) =>{
 router.post('/api', function(req, res){
     data.unshift(req.body);
 
-    fs.writeFile('/data/feedback.json', JSON.stringify(data), 'utf8', function(err){
+    fs.writeFile('data/feedback.json', JSON.stringify(data), 'utf8', function(err){
         if(err){
             console.error(err);
         }
@@ -29,6 +29,12 @@ router.post('/api', function(req, res){
     console.log(req.body.name);
     console.log(req.body.message);
     res.json(data);
+})
+
+router.delete('/api/:id', function(req, res){
+    data.splice(req.params.id, 1);
+
+    fs.writeFile('../data/feedback.json', JSON.stringify(data), 'utf8')
 })
 
 module.exports = router;

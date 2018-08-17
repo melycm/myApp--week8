@@ -1,25 +1,48 @@
 $(function() {
 
-    $.get('/api', function (date){
+    $.get('/api', function (data){
         updateFeedback(data);
     });
 
     $('.feedback-form').submit(function(e){
         e.preventDefault();
 
-        console.log('Hello world')
-
-        $.post('api',{
+        $.post('/api',{
             name: $('#feedback-form-name').val(),
-            title: $$('#feedback-form-title').val(),
+            title: $('#feedback-form-title').val(),
             message: $('#feedback-form-message').val(),
-        },updateFeedback)
+        })
+    })
+
+    $('.feedback-messages').on('click', function(e){
+        if(e.target.className = "glyphicon glypicon-trash"){
+            $.ajax({
+                url: 'api/' + e.target.id,
+                type: 'DELETE',
+                success: updateFeedback
+            })
+        }
     })
 
 
     function updateFeedback(data) {
-        var output = " ";
-        $.each(data, function(ley, item){
+        var output = "";
 
-        })
-}})
+        $.each(data, function(key, item){
+            output += '     <div class="feedback-item item-list media-list">';
+            output += '       <div class="feedback-item media">';
+            output += '       <button class="feedback-trash btn"><span id="' + key + '" class="glyphicon glyphicon-trash"></span> </button>';
+            output += '         <div class="feedback-info media-body">';
+            output += '           <div class="feedback-head">';
+            output += '             <div class="feedback-title">' + item.title + ' <small class="feedback-name label label-info">' + '--'  + item.name + '</small></div>';
+            output += '           </div>';
+            output += '           <div class="feedback-message">' + item.message + '</div>';
+            output += '         </div>';
+            output += '       </div>';
+            output += '     </div>';
+            output += '     <hr>'
+
+            });
+        $('.feedback-messages').html(output);
+}
+})
