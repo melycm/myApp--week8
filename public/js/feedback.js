@@ -15,7 +15,7 @@ $(function() {
     })
 
     $('.feedback-messages').on('click', function(e){
-        if(e.target.className = "glyphicon glypicon-trash"){
+        if(e.target.className = "far fa-trash-alt"){
             $.ajax({
                 url: '/api/' + e.target.id,
                 type: 'DELETE',
@@ -31,7 +31,7 @@ $(function() {
         $.each(data, function(key, item){
             output += '     <div class="feedback-item item-list media-list">';
             output += '       <div class="feedback-item media">';
-            output += '       <button class="feedback-trash btn"><span id="' + key + '" class="glyphicon glyphicon-trash"></span> </button>';
+            output += '       <button class="feedback-trash btn trashButt"> <i id="' + key + '" class="far fa-trash-alt"></i> </button>';
             output += '         <div class="feedback-info media-body">';
             output += '           <div class="feedback-head">';
             output += '             <div class="feedback-title">' + item.title + ' <small class="feedback-name label label-info">' + '--'  + item.name + '</small></div>';
