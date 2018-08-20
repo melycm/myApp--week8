@@ -27,10 +27,10 @@ app.get('/chatroom', function(req, res){
 })
 
 io.on('connection', function(socket) {
-    io.emit('chat message', 'A swiftie connected');
+    io.emit('chat message', 'A user connected');
     console.log('a user connected');
     socket.on('disconnect', function() {
-        io.emit('chat message', 'A swiftie disconnected');
+        io.emit('chat message', 'A user disconnected');
     });
     socket.on('chat message', function(msg){
         io.emit('chat message', msg)
