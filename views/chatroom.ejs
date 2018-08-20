@@ -16,11 +16,15 @@
 
     <!-- <h1><b><%= pageTitle %></b></h1>  -->
     <div style="margin-top: 15px; font-size: 13px; padding: 0;" class="container">
-        <ul id="messages">
-        </ul>
-        <form class="formchat" action="">
+        <div>
+            <ul id="messages">
+            </ul>
+        </div>
+        <div>
+            <form class="formchat" action="">
             <input style="border: 1px solid rgb(39, 39, 39); padding: 2px; width: 80%;" id="m" autocomplete="off"><button style="color:white;" class="">Send</button>
-        </form>
+            </form>
+        </div>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.js"></script>
