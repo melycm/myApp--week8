@@ -14,7 +14,7 @@ This is a back-end project which consist on a website where you can find all the
 
 <h2>Example Code</h2>
 To see the full code, please visit <a href="https://github.com/melycm/myApp--week8">T.S Albums</a> on Github.
-<img src="images/codeexample.png" style="width= 30px">
+<img src="../images/codeexample.png" style="width= 30px">
 
 
 <h2>Video</h2>
